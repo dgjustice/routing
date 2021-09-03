@@ -1,0 +1,18 @@
+frr version 7.7-dev_git
+frr defaults traditional
+log syslog informational
+no ipv6 forwarding
+hostname spine1
+service integrated-vtysh-config
+!
+router bgp 65000
+ bgp router-id 1.1.1.1
+!
+router isis foo
+ net 49.0001.1111.1111.1111.00
+!
+interface eth1
+ isis topology ipv4-unicast
+!
+line vty
+!
